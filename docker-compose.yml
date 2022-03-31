@@ -1,13 +1,13 @@
 version: "3.9"
 services:
   code:
-    image: code
+    image: soosterveld/code
     container_name: code
     ports:
       - "5000:5000"
 
   api:
-    image: api
+    image: soosterveld/api
     container_name: api
     ports:
       - "5050:5050"
