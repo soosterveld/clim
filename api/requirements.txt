@@ -1,0 +1,9 @@
+flask
+redis
+flask
+flask-login
+Authomatic
+flask-mongoengine
+dnspython
+flask-restful
+requests
