@@ -4,7 +4,7 @@ from dnszone import DnsZone
 import socket
 import dns.resolver
 
-my_zone = DnsZone('clim.test', '127.0.0.1')
+my_zone = DnsZone('clim.test', '192.168.37.127')
 
 app = Flask(__name__)
 api = Api(app)
@@ -15,6 +15,9 @@ parser.add_argument('ipv4')
 
 class PostAddRecord(Resource):
   # curl http://192.168.37.127:5050/dns/addpost -d "fqdn=<fqdn>" -d "ipv4=<ipv4>" -X POST
+  
+  # JSON
+  # curl -X POST http://127.0.0.1:5050/dns/addpost -H "Content-Type: application/json" -d '{"fqdn":"sundayyyy","ipv4":"2.3.5.5"}'
   def post(self):
     args = parser.parse_args()
     fqdn = str(args['fqdn']) + ".clim.test"
