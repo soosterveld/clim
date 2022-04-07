@@ -4,6 +4,10 @@ from dnszone import DnsZone
 import socket
 import dns.resolver
 
+client = pymongo.MongoClient("mongodb+srv://sherisenia:pa$$w0rd@cluster0.y4ewv.mongodb.net/test?retryWrites=true&w=majority")
+db = client.test
+collection = db.webusers_db
+
 my_zone = DnsZone('clim.test', '192.168.37.127')
 
 app = Flask(__name__)
